@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:repaintboundarytest/inheritedtest.dart';
 import 'package:repaintboundarytest/pagetest.dart';
+import 'package:repaintboundarytest/textspan.dart';
 import 'package:asset_test/asset_test.dart';
 
 void main() => runApp(MyApp());
@@ -99,6 +100,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   }));
                 },
                 child: Text('go inherited test'),
+              ),
+              RaisedButton(
+                child: Text('textspan'),
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return TextSpanTest();
+                  }));
+                },
               ),
               Text(
                 'You have pushed the button this many times:',
