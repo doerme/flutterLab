@@ -3,6 +3,7 @@ import 'package:repaintboundarytest/inheritedtest.dart';
 import 'package:repaintboundarytest/pagetest.dart';
 import 'package:repaintboundarytest/textspan.dart';
 import 'package:asset_test/asset_test.dart';
+import 'package:repaintboundarytest/widgets_binding_observer.dart';
 
 void main() => runApp(MyApp());
 
@@ -47,7 +48,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -107,6 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
                     return TextSpanTest();
+                  }));
+                },
+              ),
+              RaisedButton(
+                child: Text('ObserverTest'),
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return ObserverTest();
                   }));
                 },
               ),
